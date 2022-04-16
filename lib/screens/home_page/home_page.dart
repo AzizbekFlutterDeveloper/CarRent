@@ -36,13 +36,18 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const Spacer(),
-                  Container(
-                    padding: EdgeInsets.all(getWidth(14)),
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.all(Radius.circular(8)),
-                      border: Border.all(color: Colors.grey)
+                  GestureDetector(
+                    child: Container(
+                      padding: EdgeInsets.all(getWidth(14)),
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.all(Radius.circular(8)),
+                        border: Border.all(color: Colors.grey)
+                      ),
+                      child: SvgPicture.asset("assets/icon/Group 50.svg"),
                     ),
-                    child: SvgPicture.asset("assets/icon/Group 50.svg"),
+                    onTap: (){
+                      Navigator.pushNamed(context, '/filter');
+                    },
                   ),
                 ],
               ),
