@@ -1,3 +1,4 @@
+import 'package:egar/core/conplament/cons_color.dart';
 import 'package:egar/router/my_route.dart';
 import 'package:flutter/material.dart';
 
@@ -15,9 +16,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch:  Colors.blue,
       ),
-      initialRoute: '/home',
+      initialRoute: '/',
       onGenerateRoute: _forRoute.route,
     );
 
