@@ -1,3 +1,4 @@
+import 'package:egar/core/conplament/cons_color.dart';
 import 'package:egar/core/constans/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pin_put/pin_put.dart';
@@ -6,7 +7,6 @@ class SmsCodePage extends StatelessWidget {
   SmsCodePage({Key? key}) : super(key: key);
 
   final TextEditingController _pinPutController = TextEditingController();
-  final FocusNode _pinPutFocusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -73,10 +73,8 @@ class SmsCodePage extends StatelessWidget {
                               eachFieldHeight: getHeight(48.12),
                               eachFieldWidth: getWidth(55),
                               onSubmit: (String pin) {
-                                print(_pinPutController.text);
-                                  Navigator.pushNamed(context, '/home');
-                              }
-                                ,
+                                Navigator.pushNamed(context, '/home');
+                              },
                               controller: _pinPutController,
                               submittedFieldDecoration: BoxDecoration(
                                 border: Border.all(color: Colors.amber),
@@ -97,6 +95,41 @@ class SmsCodePage extends StatelessWidget {
                     );
                   },
                 ),
+                SizedBox(height: getHeight(8)),
+                Row(
+                  children: [
+                    SizedBox(width: getWidth(52)),
+                    Text(
+                      "The code didn't come?",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: getWidth(10),
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    SizedBox(width: getWidth(10),),
+                    GestureDetector(
+                      child: Container(
+                        padding: EdgeInsets.all(getWidth(5)),
+                        decoration: const BoxDecoration(
+                          color: Colors.amber,
+                          borderRadius: BorderRadius.all(Radius.circular(3)),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Send again",
+                            style: TextStyle(
+                              color: ConsColor.black,
+                              fontSize: getWidth(10),
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                      ),
+                      onTap: (){},
+                    ),
+                  ],
+                )
               ],
             ),
           ],
