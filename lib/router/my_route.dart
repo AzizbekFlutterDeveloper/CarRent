@@ -1,4 +1,6 @@
 import 'package:egar/screens/home_page/bottom_nav_bar.dart';
+import 'package:egar/screens/home_page/cardata_page.dart';
+import 'package:egar/screens/home_page/cars_page.dart';
 import 'package:egar/screens/home_page/filter_page.dart';
 import 'package:egar/screens/login_page/sign_in_page.dart';
 import 'package:egar/screens/login_page/sign_up.dart';
@@ -23,6 +25,10 @@ class MyRoute{
         return MaterialPageRoute(builder:(context) => SignUpPage(),);
       case '/filter':
         return MaterialPageRoute(builder:(context) => FilterPage(),);
+      case '/cars':
+        return MaterialPageRoute(builder:(context) => CarsPage(name: args.toString(),),);
+      case '/car':
+        return MaterialPageRoute(builder:(context) => CarDataPage(),);
        
     }
   }
