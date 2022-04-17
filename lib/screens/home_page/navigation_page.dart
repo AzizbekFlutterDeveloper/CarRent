@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:egar/core/constans/size_config.dart';
 import 'package:egar/core/constans/text_style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class NavigationPage extends StatelessWidget {
   const NavigationPage({Key? key}) : super(key: key);
@@ -33,10 +34,26 @@ class NavigationPage extends StatelessWidget {
                 children: [
                   Text("Tesla Model 3",style: MyTextStyle.bold(size: 16)),
                   SizedBox(
-                    height: getHeight(128),
-                    width: getWidth(294),
+                    height: getHeight(117),
+                    width: getWidth(273),
                     child: CachedNetworkImage(imageUrl: "https://www.pngplay.com/wp-content/uploads/13/Tesla-Model-3-PNG-Images-HD.png",fit: BoxFit.cover,),
-                  )
+                  ),
+                  for (var i = 0; i < 4; i++) 
+                  Column(
+                    children: [
+                      SizedBox(height: getHeight(8)),
+                      Row(
+                        children: [
+                          SvgPicture.asset("assets/icon/date.svg"),
+                          SizedBox(width: getWidth(10)),
+                          Text("Date",style: MyTextStyle.bold(size: 14)),
+                          Spacer(),
+                          Text("22 Apr, 00:00-23:00",style: MyTextStyle.normal(size: 14))
+                        ],
+                      ),
+                      Divider(thickness:   getHeight(1)),
+                    ],
+                  ),
                 ],
               ),
             );

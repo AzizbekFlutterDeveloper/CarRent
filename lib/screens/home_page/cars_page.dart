@@ -4,14 +4,15 @@ import 'package:flutter/material.dart';
 
 class CarsPage extends StatelessWidget {
   final String? name;
-  const CarsPage({Key? key, required this.name}) : super(key: key);
+  final double? height;
+  const CarsPage({Key? key, required this.name,this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(getWidth(20)),
+        padding: EdgeInsets.only(top:getWidth(20),left: getWidth(20),right: getWidth(20)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -42,7 +43,7 @@ class CarsPage extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: getHeight(717),
+              height:height?? getHeight(717),
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
