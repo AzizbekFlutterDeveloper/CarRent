@@ -2,6 +2,7 @@ import 'package:egar/bloc/home_cubit.dart';
 import 'package:egar/bloc/home_state.dart';
 import 'package:egar/core/conplament/cons_color.dart';
 import 'package:egar/screens/home_page/home_page.dart';
+import 'package:egar/screens/home_page/navigation_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -25,7 +26,7 @@ class BottomNavBarPage extends StatelessWidget {
   Scaffold scaffold(BuildContext context) {
     int index = context.watch<HomeCubit>().isBottomIndex;
     return Scaffold(
-      body: HomePage(),
+      body: NavigationPage(),
       bottomNavigationBar: BottomNavigationBar(
         showUnselectedLabels: true,
         selectedItemColor: ConsColor.black,
