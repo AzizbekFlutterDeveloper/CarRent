@@ -1,12 +1,13 @@
 import 'package:egar/core/constans/size_config.dart';
 import 'package:egar/widget/car_container.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class CarsPage extends StatelessWidget {
   final String? name;
   final double? height;
   const CarsPage({Key? key, required this.name,this.height}) : super(key: key);
-
+  final bool isBool = true;
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -44,7 +45,19 @@ class CarsPage extends StatelessWidget {
             ),
             SizedBox(
               height:height?? getHeight(717),
-              child: GridView.builder(
+              child:isBool == true? Center(child: Column(
+                children: [
+                  SizedBox(height: getHeight(100)),
+                  Lottie.asset("assets/animation/notfound.json"),
+                  Text("Not Found",
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: getHeight(30),
+                      fontWeight: FontWeight.bold
+                    ),
+                  )
+                ],
+              ),):GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisExtent: getHeight(200),

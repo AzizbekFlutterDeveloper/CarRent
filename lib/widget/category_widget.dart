@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:egar/core/constans/size_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class Category extends StatelessWidget {
   const Category({Key? key}) : super(key: key);
@@ -54,7 +55,7 @@ class Category extends StatelessWidget {
                     SizedBox(
                       height: getHeight(66),
                       width: getWidth(130),
-                      child: CachedNetworkImage(imageUrl: "https://i.pinimg.com/originals/3f/9a/d4/3f9ad4e2e337e951217651e0e1f61832.gif"),
+                      child: Lottie.asset("assets/animation/23729-yellow-car.json",),
                     ),
                     Spacer(),
                     Text("Land Cruiser 200",
