@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "566961487582",
+    "project_id": "carrent-48b79",
+    "storage_bucket": "carrent-48b79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566961487582:android:10e519957f5934e6f54c4f",
+        "android_client_info": {
+          "package_name": "com.example.egar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566961487582-mamc7h3i495cjnps29nvsscofn3e4tq4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIEXvz0CZAhIRTKZkJG01VomD2pa0NomQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566961487582-mamc7h3i495cjnps29nvsscofn3e4tq4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

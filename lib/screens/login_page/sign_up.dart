@@ -1,5 +1,6 @@
 import 'package:egar/core/constans/input_decoration.dart';
 import 'package:egar/core/constans/size_config.dart';
+import 'package:egar/service/phone_number_service.dart';
 import 'package:egar/widget/buttom_container.dart';
 import 'package:flutter/material.dart';
 
@@ -44,6 +45,8 @@ class SignUpPage extends StatelessWidget {
             ),
             SizedBox(height: getHeight(15)),
             TextFormField(
+              keyboardType: TextInputType.number,
+              controller: PhoneService.phoneController,
               decoration: MyDecoration.decoration("Phone number"),
             ),
             SizedBox(height: getHeight(15)),
@@ -54,6 +57,7 @@ class SignUpPage extends StatelessWidget {
             ButtomContainer(
               text: "Create account",
               onTap: (){
+                PhoneService.sendSms(context);
                 Navigator.pushNamed(context, '/sms_code');
               },
             ),

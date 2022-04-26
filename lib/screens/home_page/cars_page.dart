@@ -53,7 +53,7 @@ class CarsPage extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.grey,
                       fontSize: getHeight(30),
-                      fontWeight: FontWeight.bold
+                      fontWeight: FontWeight.bold,
                     ),
                   )
                 ],

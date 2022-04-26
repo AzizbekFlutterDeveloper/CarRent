@@ -5,6 +5,7 @@ import 'package:egar/core/constans/size_config.dart';
 import 'package:egar/screens/home_page/cars_page.dart';
 import 'package:egar/screens/home_page/home_page.dart';
 import 'package:egar/screens/home_page/navigation_page.dart';
+import 'package:egar/screens/home_page/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,7 +17,7 @@ class BottomNavBarPage extends StatelessWidget {
     HomePage(),
     NavigationPage(),
     CarsPage(name: "Saved",height: getHeight(686),),
-    NavigationPage(),
+    ProfilePage(),
   ];
 
   @override
