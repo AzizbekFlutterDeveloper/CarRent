@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:egar/core/constans/size_config.dart';
 import 'package:egar/widget/car_container.dart';
 import 'package:flutter/material.dart';
@@ -21,31 +22,37 @@ class CarsPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                GestureDetector(
-                  child: Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.black,
-                    size: getWidth(25),
-                  ),
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                ),
-                Text(
-                  name.toString(),
-                  style: TextStyle(
-                    fontSize: getWidth(20),
-                    fontWeight: FontWeight.w700,
+                FadeInLeft(
+                  child: GestureDetector(
+                    child: Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.black,
+                      size: getWidth(25),
+                    ),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
                   ),
                 ),
-                GestureDetector(
-                  child: Icon(Icons.search, size: getWidth(25)),
+                FadeInDown(
+                  child: Text(
+                    name.toString(),
+                    style: TextStyle(
+                      fontSize: getWidth(20),
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+                FadeInRight(
+                  child: GestureDetector(
+                    child: Icon(Icons.search, size: getWidth(25)),
+                  ),
                 ),
               ],
             ),
             SizedBox(
               height:height?? getHeight(717),
-              child:isBool == true? Center(child: Column(
+              child:isBool == false? Center(child: Column(
                 children: [
                   SizedBox(height: getHeight(100)),
                   Lottie.asset("assets/animation/notfound.json"),
@@ -65,13 +72,24 @@ class CarsPage extends StatelessWidget {
                   mainAxisSpacing: getHeight(20),
                 ),
                 itemBuilder: (context, index) {
-                  return CarContainer(
-                    price: "70",
-                    img_url:
-                        "https://pngimg.com/uploads/mercedes/mercedes_PNG80146.png",
-                    onTap: () {
-                      Navigator.pushNamed(context, '/car');
-                    },
+                  return index.isOdd ? FadeInRight(
+                    child: CarContainer(
+                      price: "70",
+                      img_url:
+                          "https://pngimg.com/uploads/mercedes/mercedes_PNG80146.png",
+                      onTap: () {
+                        Navigator.pushNamed(context, '/car');
+                      },
+                    ),
+                  ):FadeInLeft(
+                    child: CarContainer(
+                      price: "70",
+                      img_url:
+                          "https://pngimg.com/uploads/mercedes/mercedes_PNG80146.png",
+                      onTap: () {
+                        Navigator.pushNamed(context, '/car');
+                      },
+                    ),
                   );
                 },
               ),

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:egar/core/conplament/cons_color.dart';
 import 'package:egar/core/constans/size_config.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,9 @@ class ModelSizedBox extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.all(Radius.circular(8)),
                 border: Border.all(color: ConsColor.black),
+                image: DecorationImage(
+                  image: CachedNetworkImageProvider(brends[index]),
+                ),
               ),
             ),
             onTap: (){},
